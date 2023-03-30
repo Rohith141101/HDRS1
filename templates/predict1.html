@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Handwritten Digit Recognition System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/recognize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar-collapse{
+        float:right;
+        font-size: 20px;
+        color: white;
+        padding: 10px 10px;
+    }
+    body{
+      background-color: cyan;
+    }
+    .container{
+        padding-top:70px;
+    }
+    h3{
+        color: red;
+        margin-left: 45px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    p{
+        font-size: 23px;
+        padding-top: 60px;
+    }
+    @media screen and (max-width:767px) {
+      .navbar-collapse{
+        float:left;
+        font-size: 20px;
+        color: white;
+        padding: 10px 10px;
+      }
+      h3{
+        color: red;
+        text-align:center;
+        margin:0;
+        font-size: 35px;
+        font-weight: 600;
+      }
+      .flex-btn{
+        padding-top: 10px;
+        justify-content: center;
+        margin: 0;
+      }
+
+      }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="home">Home</a></li>
+        <li><a href="predict">Recognize</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <h3>Digit Recognition</h3><br>
+  <div class="flex-btn" style="text-align:center;margin-left:15px;">
+    <div class="input-image-container">
+   <img src="{{url_for('static',filename='data/')}}{{img_name}}" width="200" height="200" style="border:lightgray 1px solid;" />
+   </div><br>
+  <h2 style="position:absolute;padding-top:210px;padding-left:-30px;text-align:center;color:black;font-size: 25px;font-weight: 600;">Recognized Digit:[{{best.0}}]</h2>
+ </div>
+  <script src="/static/recognize.js"></script>
+   </body>
+   </html>
+
