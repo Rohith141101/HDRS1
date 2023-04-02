@@ -1,5 +1,5 @@
 var input = document.getElementById('file');
-var infoArea = document.getElementById('file-upload-filename');
+var infoArea = document.getElementById('file-filename');
 input.addEventListener('change', showFileName);
 function showFileName(event) {
  var input = event.srcElement;
