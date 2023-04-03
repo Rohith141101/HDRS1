@@ -52,6 +52,14 @@
 
       }
   </style>
+  <script>
+    function speak() {
+      var text = document.querySelector('#myText').innerText;
+      var msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    }
+    window.onload=speak;
+ </script>
 </head>
 <body>
 
@@ -80,7 +88,7 @@
     <div class="input-image-container">
    <img src="{{url_for('static',filename='data/')}}{{img_name}}" width="200" height="200" style="border:lightgray 1px solid;" />
    </div><br>
-  <h2 style="position:absolute;padding-top:210px;padding-left:-30px;text-align:center;color:black;font-size: 25px;font-weight: 600;">Recognized Digit:[{{best.0}}]</h2>
+  <h2 style="position:absolute;padding-top:210px;padding-left:-30px;text-align:center;color:black;font-size: 25px;font-weight: 600;"id="myText">Recognized Digit is [{{best.0}}]</h2>
  </div>
   <script src="/static/recognize.js"></script>
    </body>
